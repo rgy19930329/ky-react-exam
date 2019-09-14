@@ -1,0 +1,16 @@
+{
+  "name": "ky-react-exam",
+  "version": "1.0.0",
+  "description": "ky-react-exam, exam for fe",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "prod": "cross-env NODE_ENV=production webpack --color --progress"
+  },
+  "author": "rgy",
+  "license": "ISC",
+  "dependencies": {
+    "nice-scripts": "git+https://github.com/rgy19930329/nice-scripts.git#master",
+    "nice-ui": "git+https://github.com/rgy19930329/nice-ui.git#master"
+  }
+}

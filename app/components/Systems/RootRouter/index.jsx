@@ -8,11 +8,13 @@ import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import routes from "@components/Systems/router";
 import NotFound from "@components/Systems/NotFound";
+import { setTitle, getTitle } from "./utils";
 
 @withRouter
 class RootRouter extends React.Component {
   render() {
     const location = this.props.location;
+    setTitle(getTitle(routes, location.pathname));
     return (
       <div>
         <div style={{padding: 15}}>

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * @desc 组件exam工具
+ * @desc exam创建工具
  * @author ranguangyu
  * @date 2019-9-18
  * @use `npm run new`

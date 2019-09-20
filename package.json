@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "prod": "cross-env NODE_ENV=production webpack --color --progress",
-    "new": "node ./scripts/index.js"
+    "new": "node ./scripts/index.js",
+    "remove": "node ./scripts/remove.js"
   },
   "author": "rgy",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.2",
+    "inquirer": "^6.2.0",
     "nice-scripts": "git+https://github.com/rgy19930329/nice-scripts.git#master",
     "nice-ui": "git+https://github.com/rgy19930329/nice-ui.git#master"
   }

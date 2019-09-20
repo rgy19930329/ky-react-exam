@@ -1,9 +1,14 @@
-import { HOCAsync } from "nice-ui";
+import Exam from "./index";
 
 export default [
   {
+    path: "/",
+    name: "FE测试",
+    component: Exam,
+  },
+  {
     path: "/exam",
-    name: "测试",
-    component: HOCAsync(() => import("./index")),
+    name: "FE测试",
+    component: Exam,
   },
 ]

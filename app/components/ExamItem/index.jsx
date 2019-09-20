@@ -27,14 +27,14 @@ export default class ExamItem extends React.Component {
   }
 
   componentDidMount() {
-
+    
   }
 
   render() {
     const { id } = this.props;
     return (
       <div className="comp-exam-item-wrapper">
-        <Collapse defaultActiveKey={["Q"]}>
+        <Collapse defaultActiveKey={["Q", "A"]}>
           <Panel header="Q" key="Q">
             <MarkDown>{require(`@app/exams/question/${id}.md`)}</MarkDown>
           </Panel>

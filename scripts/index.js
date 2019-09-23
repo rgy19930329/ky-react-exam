@@ -11,8 +11,17 @@ const fs = require('fs');
 const path = require('path');
 
 const handleCreate = (id) => {
-  fs.writeFileSync(path.resolve(__dirname, `../app/exams/question/${id}.md`), `### ${id} Q`);
-  fs.writeFileSync(path.resolve(__dirname, `../app/exams/answer/${id}.md`), `### ${id} A`);
+  const questionContent = 
+`### ${id}. Q
+
+\`\`\`js
+
+\`\`\`
+
+以上代码输出结果？`;
+
+  fs.writeFileSync(path.resolve(__dirname, `../app/exams/question/${id}.md`), questionContent);
+  fs.writeFileSync(path.resolve(__dirname, `../app/exams/answer/${id}.md`), `答案：\n`);
 }
 
 const files = fs.readdirSync(path.resolve(__dirname, `../app/exams/question`));

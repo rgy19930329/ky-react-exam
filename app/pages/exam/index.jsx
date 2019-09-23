@@ -6,7 +6,7 @@
 
 import "./index.less";
 import React from "react";
-import ExamList from "@components/ExamList";
+import ExamNavs from "@components/ExamNavs";
 import ExamItem from "@components/ExamItem";
 
 export default class Exam extends React.Component {
@@ -14,8 +14,22 @@ export default class Exam extends React.Component {
   constructor(props) {
     super(props);
 
+    const {
+      match: {
+        params: { id = "1" }
+      }
+    } = props;
+
     this.state = {
-      id: "1",
+      id,
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.id !== this.props.match.params.id) {
+      this.setState({
+        id: nextProps.match.params.id,
+      });
     }
   }
 
@@ -27,7 +41,12 @@ export default class Exam extends React.Component {
     const { id } = this.state;
     return (
       <div className="page-exam-wrapper">
-        <ExamList value={id} onChange={(value) => this.setState({ id: value })} />
+        <ExamNavs
+          value={id}
+          onChange={(id) => {
+            this.props.history.push(`/${id}`);
+          }}
+        />
         <ExamItem id={id} />
       </div>
     )

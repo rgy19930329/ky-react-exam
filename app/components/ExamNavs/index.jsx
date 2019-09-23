@@ -32,7 +32,7 @@ export default class ExamList extends React.Component {
   render() {
     const { value, onChange } = this.props;
     return (
-      <div className="comp-exam-list-wrapper">
+      <div className="comp-exam-navs-wrapper">
         {qs && qs.map(id => (
           <div className="exam-id" key={id}>
             <a

@@ -24,17 +24,26 @@ export default class ExamItem extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      activeKey: ["Q"],
+    }
   }
 
-  componentDidMount() {
-    
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.id !== this.props.id) {
+      this.setState({ activeKey: ["Q"] });
+    }
   }
 
   render() {
     const { id } = this.props;
     return (
       <div className="comp-exam-item-wrapper">
-        <Collapse defaultActiveKey={["Q"]}>
+        <Collapse
+          activeKey={this.state.activeKey}
+          onChange={(activeKey) => this.setState({ activeKey })}
+        >
           <Panel header="Q" key="Q">
             <MarkDown>{require(`@app/exams/question/${id}.md`)}</MarkDown>
           </Panel>

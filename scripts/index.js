@@ -21,7 +21,7 @@ const handleCreate = (id) => {
 以上代码输出结果？`;
 
   fs.writeFileSync(path.resolve(__dirname, `../app/exams/question/${id}.md`), questionContent);
-  fs.writeFileSync(path.resolve(__dirname, `../app/exams/answer/${id}.md`), `答案：\n`);
+  fs.writeFileSync(path.resolve(__dirname, `../app/exams/answer/${id}.md`), `答案：\n\n`);
 }
 
 const files = fs.readdirSync(path.resolve(__dirname, `../app/exams/question`));

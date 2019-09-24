@@ -10,6 +10,7 @@ import classnames from "classnames";
 
 const qreq = require.context("@app/exams/question", true, /\.md$/);
 let qs = qreq.keys().map(item => item.replace(/[^0-9]/g, ""));
+qs = qs.sort((a, b) => a - b);
 
 export default class ExamList extends React.Component {
   

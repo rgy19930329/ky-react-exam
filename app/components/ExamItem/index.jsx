@@ -8,7 +8,7 @@ import "./index.less";
 import React from "react";
 import PropTypes from "prop-types";
 import { Collapse } from "antd";
-import { MarkDown } from "nice-ui";
+import { MarkDown } from "ky-nice-ui";
 
 const { Panel } = Collapse;
 
